@@ -11,10 +11,10 @@
     <script type="application/javascript" src="./assets/scripts/app.js"></script>
 </head>
 <body>
-    <header class="absolute flex justify-between items-center p-16 w-full">
+    <header id="header" class="absolute flex justify-between items-center p-16 w-full">
         <div class="flex gap-24">
-            <img src="./assets/images/icons/menu.svg" alt="" width="32" height="32" />
-            <img id="logo" src="./assets/images/logo.svg" alt="" width="160" height="20" onclick="goHome()" />
+            <img src="./assets/images/icons/menu.svg" alt="" width="32" height="32" onclick="goHome()" class="cursor-pointer" />
+            <img id="logo" src="./assets/images/logo.svg" alt="" width="160" height="20" class="cursor-pointer" onclick="goHome()" />
         </div>
 
         <div id="avatar"></div>
@@ -87,14 +87,34 @@
     </section>
 
     <!-- SCREEN 3 -->
-    <section id="screen-3" class="">
+    <section id="screen-3" class="px-16">
         <video id="video" width="1080" height="1920" preload loop>
             <source src="./assets/videos/vide-demo.mp4" type="video/mp4">
         </video>
+
+        <footer class="absolute bottom-32 left-0 w-full px-16">
+            <div class="call-controls gap-20 w-full">
+                <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-16 cursor-pointer">
+                    <img src="./assets/images/icons/pause.svg" alt="" width="48" height="48" class="w-full h-auto" />
+                </div>
+
+                <img src="./assets/images/icons/wave.svg" alt="" width="68" height="33" />
+
+                <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer" onclick="callMarcelo()">
+                    <img src="./assets/images/icons/red-phone.svg" alt="" width="48" height="48" class="w-full h-auto" />
+                </div>
+
+                <div class="button-keyboard absolute rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer" onclick="callChat()">
+                    <img src="./assets/images/icons/keyboard.svg" alt="" width="24" height="24" class="w-full h-auto" />
+                </div>
+            </div>
+
+
+        </footer>
     </section>
 
     <!-- SCREEN 4 -->
-    <section id="screen-4" class="p-16 py-80">
+    <section id="screen-4" class="grid gap-32 p-16 py-80">
         <div id="big-avatar-2" class="border-2 border-[#E8F7BF] rounded-full p-20 mx-24">
             <img src="./assets/images/marcelo-ramos-2.png" alt="" width="522" height="522" class="w-full h-auto rounded-full" />
         </div>
@@ -120,42 +140,39 @@
             </div>
 
         </div>
+
+        <footer id="footer-2" class="grid gap-16 w-full">
+            <div class="call-controls grid gap-20 w-full">
+                <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-16 cursor-pointer">
+                    <img src="./assets/images/icons/pause.svg" alt="" width="48" height="48" class="w-full h-auto" />
+                </div>
+
+                <img src="./assets/images/icons/wave.svg" alt="" width="68" height="33" />
+
+                <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer" onclick="callMarcelo()">
+                    <img src="./assets/images/icons/red-phone.svg" alt="" width="48" height="48" class="w-full h-auto" />
+                </div>
+
+                <div class="button-keyboard-down absolute rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer" onclick="callVideo()">
+                    <img src="./assets/images/icons/keyboard-down.svg" alt="" width="24" height="24" class="w-full h-auto" />
+                </div>
+            </div>
+
+            <div id="chat-input-2" class="flex gap-16 w-full">
+                <div class="relative w-full h-52 rounded-full bg-[#EEEDED] cursor-pointer">
+                    <input type="text" placeholder="Digite algo" class="bg-transparent w-full h-full focus:border-0 py-14 pl-24 text-18" />
+                    <span class="absolute w-40 h-full top-0 right-8 grid place-items-center"><img src="./assets/images/icons/microphone.svg" alt="" width="17" height="22" /></span>
+                </div>
+
+                <div class="rounded-full bg-[#EEEDED] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-14 cursor-pointer">
+                    <img src="./assets/images/icons/add-file.svg" alt="" width="48" height="48" class="w-full h-auto" />
+                </div>
+                <div class="rounded-full bg-[#EEEDED] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-14 cursor-pointer">
+                    <img src="./assets/images/icons/camera.svg" alt="" width="48" height="48" class="w-full h-auto" />
+                </div>
+            </div>
+        </footer>
     </section>
-
-    <footer id="footer-2" class="w-full">
-        <div id="call-controls" class="grid gap-20 w-full">
-            <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-16 cursor-pointer">
-                <img src="./assets/images/icons/pause.svg" alt="" width="48" height="48" class="w-full h-auto" />
-            </div>
-
-            <img src="./assets/images/icons/wave.svg" alt="" width="68" height="33" />
-
-            <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer" onclick="callMarcelo()">
-                <img src="./assets/images/icons/red-phone.svg" alt="" width="48" height="48" class="w-full h-auto" />
-            </div>
-
-            <div id="button-keyboard" class="absolute rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer" onclick="callChat()">
-                <img src="./assets/images/icons/keyboard.svg" alt="" width="24" height="24" class="w-full h-auto" />
-            </div>
-            <div id="button-keyboard-down" class="absolute rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer" onclick="callVideo()">
-                <img src="./assets/images/icons/keyboard-down.svg" alt="" width="24" height="24" class="w-full h-auto" />
-            </div>
-        </div>
-
-        <div id="chat-input-2" class="flex gap-16 w-full">
-            <div class="relative w-full h-52 rounded-full bg-[#EEEDED] cursor-pointer">
-                <input type="text" placeholder="Digite algo" class="bg-transparent w-full h-full focus:border-0 py-14 pl-24 text-18" />
-                <span class="absolute w-40 h-full top-0 right-8 grid place-items-center"><img src="./assets/images/icons/microphone.svg" alt="" width="17" height="22" /></span>
-            </div>
-
-            <div class="rounded-full bg-[#EEEDED] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-14 cursor-pointer">
-                <img src="./assets/images/icons/add-file.svg" alt="" width="48" height="48" class="w-full h-auto" />
-            </div>
-            <div class="rounded-full bg-[#EEEDED] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-14 cursor-pointer">
-                <img src="./assets/images/icons/camera.svg" alt="" width="48" height="48" class="w-full h-auto" />
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
 
