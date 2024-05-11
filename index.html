@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic HTML</title>
     <link href="./assets/css/output.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script type="application/javascript" src="./assets/scripts/app.js"></script>
 </head>
 <body>
     <header class="absolute flex justify-between items-center p-16 py-40 w-full">
         <div class="flex gap-24">
             <img src="./assets/images/icons/menu.svg" alt="" width="32" height="32" />
-            <img id="logo" src="./assets/images/logo.svg" alt="" width="160" height="20" />
+            <img id="logo" src="./assets/images/logo.svg" alt="" width="160" height="20" onclick="goHome()" />
         </div>
 
-        <div class="grid place-items-center w-40 h-40 rounded-full border-2 border-[#6954D9] bg-[url('./assets/images/daniel.jpg')] bg-clip-border">
-s
-        </div>
+        <div id="avatar"></div>
     </header>
 
     <!-- SCREEN 1 -->
-    <section id="screen-1" class="py-100 px-16 hidden">s
+    <section id="screen-1" class="py-100 px-16">
         <div id="search" class="relative w-full h-40 rounded-md bg-slate-200">
             <input type="text" placeholder="Search" class="bg-transparent w-full h-full focus:border-0 py-14 pl-32 text-18" />
             <span class="absolute w-40 h-full top-0 left-0 grid place-items-center"><img src="./assets/images/icons/search.svg" alt="" /></span>
@@ -33,8 +34,9 @@ s
         </div>
 
         <div class="text-20 font-medium mt-20 text-[#798288]">Seus mentores</div>
+
         <div id="mentors" class="grid grid-cols-2 gap-16 mt-20">
-            <div class="w-full cursor-pointer">
+            <div id="call-marcelo" class="w-full cursor-pointer" onclick="callMarcelo()">
                 <img src="./assets/images/marcelo-ramos.png" alt="" width="348" height="348" class="w-full h-auto" />
             </div>
             <div class="w-full cursor-pointer">
@@ -50,22 +52,22 @@ s
     </section>
 
     <!-- SCREEN 2 -->
-    <section id="screen-2" class="py-100 px-16 hidden">
-        <div id="big-avatar" class="border-2 border-[#E8F7BF] rounded-full p-20">
-            <img src="./assets/images/marcelo-ramos.png" alt="" width="348" height="348" class="w-full h-auto rounded-full" />
+    <section id="screen-2" class="grid place-items-center py-100 px-16">
+        <div id="big-avatar" class="border-2 border-[#E8F7BF] rounded-full p-20 mx-24">
+            <img src="./assets/images/marcelo-ramos-2.png" alt="" width="522" height="522" class="w-full h-auto rounded-full" />
         </div>
         <h1 class="text-[#798288] font-medium text-32 text-center mt-16">Olá <span class="text-[#6954D9]">Paulo</span>, como posso te ajudar?</h1>
 
         <div class="wrapper-conversation-type grid grid-cols-2 gap-16 w-full mt-56">
 
-            <div class="grid gap-12 p-36 place-items-center rounded-xl bg-[#EEEDED] cursor-pointer">
-                <img src="./assets/images/icons/phone.svg" alt="" width="48" height="48" class="" />
+            <div class="grid gap-12 p-36 place-items-center rounded-xl bg-[#EEEDED] cursor-pointer" onclick="callVideo()">
+                <img src="./assets/images/icons/phone.svg" alt="" width="48" height="48" />
                 <span class="text-18 text-center text-[#3C3F41] leading-[22px]">Conversar por voz</span>
             </div>
 
-            <div class="grid gap-12 p-36 place-items-center rounded-xl bg-[#EEEDED] cursor-pointer">
+            <div class="grid gap-12 p-36 place-items-center rounded-xl bg-[#EEEDED] cursor-pointer" onclick="callChat()">
                 <img src="./assets/images/icons/balloon.svg" alt="" width="48" height="48" class="" />
-                <span class="text-18 text-center text-[#3C3F41] leading-[22px]">Conversar por voz</span>
+                <span class="text-18 text-center text-[#3C3F41] leading-[22px]">Ver conversas</span>
             </div>
         </div>
 
@@ -86,8 +88,8 @@ s
     </section>
 
     <!-- SCREEN 3 -->
-    <section id="screen-3" class="hidden">
-        <video id="video" width="1080" height="1920" autoplay loop class="fixed right-0 bottom-0 min-w-full min-h-full">
+    <section id="screen-3" class="">
+        <video id="video" width="1080" height="1920" autoplay loop>
             <source src="./assets/videos/vide-demo.mp4" type="video/mp4">
         </video>
     </section>
@@ -95,46 +97,66 @@ s
     <!-- SCREEN 4 -->
     <section id="screen-4" class="p-16 pt-100">
         <div id="big-avatar-2" class="border-2 border-[#E8F7BF] rounded-full p-20 mx-24">
-            <img src="./assets/images/marcelo-ramos.png" alt="" width="348" height="348" class="w-full h-auto rounded-full" />
+            <img src="./assets/images/marcelo-ramos-2.png" alt="" width="522" height="522" class="w-full h-auto rounded-full" />
         </div>
 
         <div id="chat-conversation" class="grid gap-24 mt-16">
-            <div class="chat-incoming">
-                Olá Paulo, como posso te ajudar?
+            <div id="chat-inner" class="grid gap-32">
+                <div class="chat-incoming">
+                    Olá Paulo, como posso te ajudar?
+                </div>
+
+                <div class="chat-outgoing">
+                    Crie um paper de acordo com o capítulo 5 do meu livro.
+                </div>
+
+                <div class="chat-incoming">
+                    Ok, aqui está o arquivo para download.
+                </div>
+
+                <button class="button-download">
+                    Baixar arquivo
+                    <img src="assets/images/icons/download.svg" alt="" width="14" height="14" />
+                </button>
             </div>
 
-            <div class="chat-outgoing">
-                Crie um paper de acrodo com o capitulo 5 do meu livro.
-            </div>
-
-            <div class="chat-incoming">
-                Ok, aqui está o arquivo para download.
-            </div>
-
-            <button class="button-download">
-                Baixar arquivo
-                <img src="assets/images/icons/download.svg" alt="" width="14" height="14" />
-            </button>
         </div>
     </section>
 
-    <footer class="">
-        <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-16 cursor-pointer">
-            <img src="./assets/images/icons/pause.svg" alt="" width="48" height="48" class="w-full h-auto" />
+    <footer id="footer-2" class="w-full">
+        <div id="call-controls" class="w-full">
+            <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-16 cursor-pointer">
+                <img src="./assets/images/icons/pause.svg" alt="" width="48" height="48" class="w-full h-auto" />
+            </div>
+
+            <img src="./assets/images/icons/wave.svg" alt="" width="68" height="33" />
+
+            <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer" onclick="callMarcelo()">
+                <img src="./assets/images/icons/red-phone.svg" alt="" width="48" height="48" class="w-full h-auto" />
+            </div>
+
+            <div id="button-keyboard" class="absolute rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer" onclick="callChat()">
+                <img src="./assets/images/icons/keyboard.svg" alt="" width="24" height="24" class="w-full h-auto" />
+            </div>
+            <div id="button-keyboard-down" class="absolute rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer" onclick="callVideo()">
+                <img src="./assets/images/icons/keyboard-down.svg" alt="" width="24" height="24" class="w-full h-auto" />
+            </div>
         </div>
 
-        <img src="./assets/images/icons/wave.svg" alt="" width="68" height="33" />
+        <div id="chat-input-2" class="flex gap-16 w-full">
+            <div class="relative w-full h-52 rounded-full bg-[#EEEDED] cursor-pointer">
+                <input type="text" placeholder="Digite algo" class="bg-transparent w-full h-full focus:border-0 py-14 pl-24 text-18" />
+                <span class="absolute w-40 h-full top-0 right-8 grid place-items-center"><img src="./assets/images/icons/microphone.svg" alt="" width="17" height="22" /></span>
+            </div>
 
-        <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer">
-            <img src="./assets/images/icons/red-phone.svg" alt="" width="48" height="48" class="w-full h-auto" />
-        </div>
-
-        <div id="button-keyboard" class="absolute rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer">
-            <img src="./assets/images/icons/keyboard.svg" alt="" width="24" height="24" class="w-full h-auto" />
+            <div class="rounded-full bg-[#EEEDED] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-14 cursor-pointer">
+                <img src="./assets/images/icons/add-file.svg" alt="" width="48" height="48" class="w-full h-auto" />
+            </div>
+            <div class="rounded-full bg-[#EEEDED] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-14 cursor-pointer">
+                <img src="./assets/images/icons/camera.svg" alt="" width="48" height="48" class="w-full h-auto" />
+            </div>
         </div>
     </footer>
-
-    <!-- <script type="module" src="assets/js/app.min.js" type="text/javascript"></script> -->
 </body>
 </html>
 
