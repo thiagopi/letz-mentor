@@ -18,6 +18,8 @@
 s
         </div>
     </header>
+
+    <!-- SCREEN 1 -->
     <section id="screen-1" class="py-100 px-16 hidden">s
         <div id="search" class="relative w-full h-40 rounded-md bg-slate-200">
             <input type="text" placeholder="Search" class="bg-transparent w-full h-full focus:border-0 py-14 pl-32 text-18" />
@@ -68,7 +70,7 @@ s
         </div>
 
         <footer class="flex gap-16 mt-20">
-            <div id="chat" class="relative w-full h-52 rounded-full bg-[#EEEDED] cursor-pointer">
+            <div id="chat-input" class="relative w-full h-52 rounded-full bg-[#EEEDED] cursor-pointer">
                 <input type="text" placeholder="Digite algo" class="bg-transparent w-full h-full focus:border-0 py-14 pl-24 text-18" />
                 <span class="absolute w-40 h-full top-0 right-8 grid place-items-center"><img src="./assets/images/icons/microphone.svg" alt="" width="17" height="22" /></span>
             </div>
@@ -84,26 +86,54 @@ s
     </section>
 
     <!-- SCREEN 3 -->
-    <section id="screen-3" class="">
+    <section id="screen-3" class="hidden">
         <video id="video" width="1080" height="1920" autoplay loop class="fixed right-0 bottom-0 min-w-full min-h-full">
             <source src="./assets/videos/vide-demo.mp4" type="video/mp4">
         </video>
-        <footer class="">
-            <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-16 cursor-pointer">
-                <img src="./assets/images/icons/pause.svg" alt="" width="48" height="48" class="w-full h-auto" />
-            </div>
-
-            <img src="./assets/images/icons/wave.svg" alt="" width="68" height="33" />
-
-            <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer">
-                <img src="./assets/images/icons/red-phone.svg" alt="" width="48" height="48" class="w-full h-auto" />
-            </div>
-
-            <div id="button-keyboard" class="absolute rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer">
-                <img src="./assets/images/icons/keyboard.svg" alt="" width="24" height="24" class="w-full h-auto" />
-            </div>
-        </footer>
     </section>
+
+    <!-- SCREEN 4 -->
+    <section id="screen-4" class="p-16 pt-100">
+        <div id="big-avatar-2" class="border-2 border-[#E8F7BF] rounded-full p-20 mx-24">
+            <img src="./assets/images/marcelo-ramos.png" alt="" width="348" height="348" class="w-full h-auto rounded-full" />
+        </div>
+
+        <div id="chat-conversation" class="grid gap-24 mt-16">
+            <div class="chat-incoming">
+                Olá Paulo, como posso te ajudar?
+            </div>
+
+            <div class="chat-outgoing">
+                Crie um paper de acrodo com o capitulo 5 do meu livro.
+            </div>
+
+            <div class="chat-incoming">
+                Ok, aqui está o arquivo para download.
+            </div>
+
+            <button class="button-download">
+                Baixar arquivo
+                <img src="assets/images/icons/download.svg" alt="" width="14" height="14" />
+            </button>
+        </div>
+    </section>
+
+    <footer class="">
+        <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-16 cursor-pointer">
+            <img src="./assets/images/icons/pause.svg" alt="" width="48" height="48" class="w-full h-auto" />
+        </div>
+
+        <img src="./assets/images/icons/wave.svg" alt="" width="68" height="33" />
+
+        <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer">
+            <img src="./assets/images/icons/red-phone.svg" alt="" width="48" height="48" class="w-full h-auto" />
+        </div>
+
+        <div id="button-keyboard" class="absolute rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-10 cursor-pointer">
+            <img src="./assets/images/icons/keyboard.svg" alt="" width="24" height="24" class="w-full h-auto" />
+        </div>
+    </footer>
+
     <!-- <script type="module" src="assets/js/app.min.js" type="text/javascript"></script> -->
 </body>
 </html>

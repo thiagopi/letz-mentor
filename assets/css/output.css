@@ -727,6 +727,11 @@ video {
   clear: none;
 }
 
+.mx-24 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 .mt-16 {
   margin-top: 1rem;
 }
@@ -2109,6 +2114,10 @@ video {
   padding-right: 1rem;
 }
 
+.pt-100 {
+  padding-top: 6.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2667,6 +2676,7 @@ video {
 
 body {
   overflow: hidden;
+  overflow-y: auto;
   max-width: 100vw;
   min-height: 100vh;
 }
@@ -2703,7 +2713,7 @@ body {
   min-height: 100vh;
 }
 
-#screen-3 footer {
+footer {
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -2717,7 +2727,7 @@ body {
   border-radius: 16px;
 }
 
-#screen-3 footer #button-keyboard {
+footer #button-keyboard {
   position: absolute;
   top: -32%;
   left: calc(50% - 52px / 2);
@@ -2727,6 +2737,51 @@ body {
 #videeo {
   width: 100%;
   height: auto;
+}
+
+.chat-incoming, .chat-outgoing {
+  padding-inline: 12px;
+  padding-right: 90px;
+  color: #3C3F41;
+}
+
+.chat-outgoing {
+  padding-inline: 12px;
+  padding-left: 90px;
+  text-align: right;
+}
+
+.chat-incoming::before, .chat-outgoing::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  background-color: #6954D9;
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+}
+
+.chat-outgoing::before {
+  left: initial;
+  right: 0;
+  background-color: #A3E000;
+}
+
+.button-download {
+  all: unset;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  padding: 0.8rem 1rem;
+  margin-top: -0.6rem;
+  background-color: #E9E9E9;
+  border-radius: 0.8rem;
+  font-size: 15px;
 }
 
 @media (min-width: 512px) {
