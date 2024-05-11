@@ -12,6 +12,20 @@ const assets = [
   "./assets/images/samy-dana.png",
   "./assets/images/daniel.jpg",
   "./assets/images/logo.svg",
+  "./assets/images/icons/add-file.svg",
+  "/assets/images/icons/arrow-right.svg",
+  "/assets/images/icons/balloon.svg",
+  "/assets/images/icons/camera.svg",
+  "/assets/images/icons/download.svg",
+  "/assets/images/icons/keyboard.svg",
+  "/assets/images/icons/keyboard-down.svg",
+  "/assets/images/icons/menu.svg",
+  "/assets/images/icons/microphone.svg",
+  "/assets/images/icons/pause.svg",
+  "/assets/images/icons/phone.svg",
+  "/assets/images/icons/red-phone.svg",
+  "/assets/images/icons/search.svg",
+  "/assets/images/icons/wave.svg",
 ]
 
 self.addEventListener("install", installEvent => {
