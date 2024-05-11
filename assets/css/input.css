@@ -6,3 +6,33 @@
     position: relative;
     line-height: 1;
 }
+
+.bg-gray-300 {
+    background-color: #798288;
+}
+
+.color-brand-purple {
+    color: #6954D9;
+}
+
+
+#big-avatar {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.icon-button {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
+    background-color: #EEEDED;
+    border-radius: 50%;
+    padding: 2rem;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
