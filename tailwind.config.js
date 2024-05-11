@@ -55,6 +55,12 @@ module.exports = {
       100: "6.25rem",
       120: "7.5rem",
     },
+    extend: {
+      gridAutoRows: {
+        'min': 'min-content',
+        'max': 'max-content',
+      }
+    }
   },
   plugins: [],
 };
