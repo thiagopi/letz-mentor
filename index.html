@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic HTML</title>
+    <title>Letz Mentor</title>
     <link href="./assets/css/output.css" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/favicon/apple-icon-57x57.png">
@@ -66,7 +66,7 @@
             <div class="w-full cursor-pointer">
                 <img src="./assets/images/samy-dana.png" alt="" width="348" height="348" class="w-full h-auto" />
             </div>
-
+		</div>
     </section>
 
     <!-- SCREEN 2 -->
@@ -106,12 +106,24 @@
 
     <!-- SCREEN 3 -->
     <section id="screen-3" class="px-16">
-        <video id="video" width="1080" height="1920" preload="auto" playsinline loop>
-            <source src="assets/videos/video-demo.mp4" type="video/mp4">
+        <video id="video1" width="1080" height="1920" preload="auto" playsinline>
+            <source src="assets/videos/video-demo-01.mp4" type="video/mp4">
+        </video>
+        <video id="video2" width="1080" height="1920" preload="auto" playsinline>
+            <source src="assets/videos/video-demo-02.mp4" type="video/mp4">
+        </video>
+        <video id="video3" width="1080" height="1920" preload="auto" playsinline>
+            <source src="assets/videos/video-demo-03.mp4" type="video/mp4">
+        </video>
+        <video id="video4" width="1080" height="1920" preload="auto" playsinline>
+            <source src="assets/videos/video-demo-04.mp4" type="video/mp4">
+        </video>
+        <video id="video5" width="1080" height="1920" preload="auto" playsinline>
+            <source src="assets/videos/video-demo-05.mp4" type="video/mp4">
         </video>
 
         <footer class="absolute bottom-32 left-0 w-full px-16">
-            <div class="call-controls gap-20 w-full">
+            <div id="videoControls" class="call-controls gap-20 w-full" onMouseDown="talk()" onMouseUp="nextVideo()" onMouseOut="resetVideoControls()">
                 <div class="rounded-full border border-[#E7E7E7] grid place-items-center w-52 h-52 min-w-52 min-h-52 p-16 cursor-pointer">
                     <img src="./assets/images/icons/pause.svg" alt="" width="48" height="48" class="w-full h-auto" />
                 </div>

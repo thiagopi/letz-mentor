@@ -8,7 +8,9 @@ let screen2 = document.getElementById("screen-2");
 let screen3 = document.getElementById("screen-3");
 let screen4 = document.getElementById("screen-4");
 
-let video = document.getElementById("video");
+let video = [];
+let currentVideo = 0;
+let onChat = false;
 
 function scrollTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -19,11 +21,21 @@ function scrollTop() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    video = document.getElementById("video");
+    video = [
+		document.getElementById("video1"),
+		document.getElementById("video2"),
+		document.getElementById("video3"),
+		document.getElementById("video4"),
+		document.getElementById("video5")
+	];
+	for(let i = 1; i < video.length; i++){
+		video[i].style.display = "none";
+	}
     screen1 = document.getElementById("screen-1");
     screen2 = document.getElementById("screen-2");
     screen3 = document.getElementById("screen-3");
     screen4 = document.getElementById("screen-4");
+	onChat = false;
 });
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -31,9 +43,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     gsap.to(["#screen-2", "#screen-3", "#screen-4"], { opacity: 0, x: -windowWidth, duration: 0 });
 });
 
-
 function callMarcelo() {
-    scrollTop();
+	onChat = false;
+	stopVideo();
+	scrollTop();
+	resetVideoControls();
     gsap.to("#header", { opacity: 1, y: 0, duration: 0.5 });
     gsap.to("#logo", { opacity: 0, duration: 0.5 });
     gsap.to("#avatar", { opacity: 0, duration: 0.5 });
@@ -43,8 +57,11 @@ function callMarcelo() {
 }
 
 function callVideo() {
-    video.currentTime = 0;
-    video.play();
+	onChat = true;
+	stopVideo();
+	currentVideo = video.length - 1;
+    video[currentVideo].currentTime = 0;
+	video[0].style.display = "block";
     scrollTop();
     gsap.to("#logo", { opacity: 0, duration: 0.5 });
     gsap.to("#avatar", { opacity: 0, duration: 0.5 });
@@ -58,8 +75,46 @@ function callVideo() {
     current = "#screen-3";
 }
 
+function talk() {
+	stopVideo();
+	document.getElementById("videoControls").style.backgroundColor="#EEEEEE";
+}
+							
+function resetVideoControls() {
+	document.getElementById("videoControls").style.backgroundColor="#FFFFFF";
+}							
+
+
+function stopVideo() {
+	resetVideoControls();
+	video[currentVideo].pause();
+	video[currentVideo].currentTime = 0;
+	for(let i = 1; i < video.length; i++){
+		video[i].style.display = "none";
+	}	
+}
+
+function nextVideo() {
+	resetVideoControls();
+	if(!onChat){
+		stopVideo();
+		currentVideo = video.length - 1;
+		return;
+	}
+	video[currentVideo].style.display = "none";	
+	currentVideo++;
+	if(currentVideo > video.length - 1){
+		currentVideo = 0;
+	}
+	video[currentVideo].style.display = "block";
+	video[currentVideo].currentTime = 0;		
+	video[currentVideo].play();
+}
+		
 function callChat() {
-    scrollTop();
+	onChat = false;
+	stopVideo();
+	scrollTop();
     gsap.to("#header", { opacity: 1, y: 0, duration: 0.5 });
     gsap.to("#logo", { opacity: 0, duration: 0.5 });
     gsap.to("#avatar", { opacity: 0, duration: 0.5 });
@@ -74,6 +129,8 @@ function callChat() {
 }
 
 function goHome() {
+	onChat = false;
+	stopVideo();
     scrollTop();
     gsap.to("#header", { opacity: 1, y: 0, duration: 0.5 });
     gsap.to("#logo", { opacity: 1, duration: 0.5 });
