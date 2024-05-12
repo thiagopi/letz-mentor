@@ -7,14 +7,8 @@
 npm install
 ```
 
-**And run the file _run.sh_ if you use Unix system**
+**Or run the Tailwind watch command**
 ```
-./run.sh
-```
-
-**Or run the gulp command**
-```
-gulp watch
+npm run watch
 ```
 
-The command _gulp watch_ will observe the files scss and js, and automatically save the css into the folder assets/css, and js files will be saved into assets/js folder. After save the files, gulp will refresh the browser.

@@ -1,3 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home1/thia2984/letz.mentor.letsgo.dev.br
+    - export DEPLOYPATH=/home1/thia2984/letz.mentor.letsgo.dev.br/
+    - /bin/cp -R * $DEPLOYPATH
