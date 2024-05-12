@@ -8,6 +8,9 @@
 }
 
 html, body {
+	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+	-webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     overflow: hidden;
     max-width: 100vw;
     min-height: 100vh;
@@ -112,10 +115,11 @@ footer .button-keyboard, footer .button-keyboard-down {
     background-color: #fff;
 }
 
-#videeo {
+#video1, #video2, #video3, #video4, #video5 {
+    height: 100vh;
     width: 100%;
-    height: auto;
-
+    object-fit: fill;
+    position: absolute;
 }
 
 #chat-conversation {
